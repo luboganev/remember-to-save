@@ -5,7 +5,7 @@ when observing LiveData coming from a fake persisted storage data
 that can be updated while on same screen or different screen. The screen navigation
 uses Compose navigation library
 
-###The not so interesting components:
+### The not so interesting components:
 - A DateTimeUseCase which simply serves the purpose of our data source which lives longer than the UI.
 - A simple main-detail Compose navigation between two screens - main screen and details screen,
 where the detail screen can only navigate back
@@ -14,7 +14,7 @@ where the detail screen can only navigate back
     - DetailViewModel is responsible for updating the data in DateTimeUseCase
 - The DetailScreen is not interesting, it contains only a button to modify data and one to navigate back
 
-### The not so interesting components:
+### The actually interesting components:
 
 - The MainScreen contains the RememberExperiment composable which gets has input the formatted time as a string and
 contains three switches with state defined as following:
