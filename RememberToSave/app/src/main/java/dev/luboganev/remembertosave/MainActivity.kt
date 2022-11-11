@@ -3,7 +3,13 @@ package dev.luboganev.remembertosave
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -13,23 +19,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            RememberToSaveTheme {
-                val navController = rememberNavController()
-                NavHost(
-                    modifier = Modifier, navController = navController, startDestination = "main"
-                ) {
-                    composable("main") {
-                        MainScreen {
-                            navController.navigate("detail")
-                        }
-                    }
-                    composable("detail") {
-                        DetailScreen {
-                            navController.popBackStack()
-                        }
-                    }
-                }
-            }
+            App()
         }
     }
 }
